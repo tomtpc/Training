@@ -1,7 +1,6 @@
----
-- hosts: server
-  remote_user: ubuntu
-  become: true
+- name: Install Docker and Docker Compose
+  hosts: server
+  become: yes
   tasks:
     - name: Install Docker
       apt:
@@ -21,4 +20,3 @@
         docker-compose rm -f
         docker-compose pull
         docker-compose up -d
-...
