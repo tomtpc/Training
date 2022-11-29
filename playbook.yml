@@ -2,6 +2,10 @@
   hosts: server
   become: yes
   tasks:
+    - name: Update
+      apt:
+        update_cache: yes
+
     - name: Install Docker
       apt:
         name:
